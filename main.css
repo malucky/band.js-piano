@@ -1,20 +1,19 @@
-.p-wrapper {
+#p-wrapper {
   left: 0;
   margin: auto;
-  width: 1240px;
 }
 
-ul.piano {
+ul#piano {
   position: relative;
-  width: 1160px;
+  width: 1240px;
   margin: auto;
 }
 
 .p-wrapper-lower {
-  width: 1000px;
+  width: 920px;
 
 }
 
-ul.piano.piano-lower {
+ul#piano.piano-lower {
   width: 920px;
 }
