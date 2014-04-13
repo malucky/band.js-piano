@@ -1,7 +1,10 @@
 #p-wrapper {
+  left: 0;
   margin: auto;
 }
 
 ul#piano {
-  margin-left: 8px;
+  position: relative;
+  width: 1240px;
+  margin: auto;
 }
