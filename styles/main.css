@@ -1,14 +1,23 @@
-#p-wrapper {
+.p-wrapper {
   left: 0;
   margin: auto;
+  width: 1240px;
 }
 
-ul#piano {
+ul.piano {
   position: relative;
-  width: 1240px;
+  width: 1160px;
   margin: auto;
 }
 
 .selected {
   background: red !important; /* Refactor this, important = sketchy */
+}
+
+.p-wrapper-lower {
+  width: 1000px;
+}
+
+ul.piano.piano-lower {
+  width: 920px;
 }
