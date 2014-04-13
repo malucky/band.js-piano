@@ -1,0 +1,10 @@
+#p-wrapper {
+  left: 0;
+  margin: auto;
+}
+
+ul#piano {
+  position: relative;
+  width: 1240px;
+  margin: auto;
+}
