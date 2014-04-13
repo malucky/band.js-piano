@@ -10,9 +10,12 @@ ul.piano {
   margin: auto;
 }
 
+.selected {
+  background: red !important; /* Refactor this, important = sketchy */
+}
+
 .p-wrapper-lower {
   width: 1000px;
-
 }
 
 ul.piano.piano-lower {
