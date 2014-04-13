@@ -18,3 +18,12 @@ ul.piano {
 ul.piano.piano-lower {
   width: 920px;
 }
+
+/*display the current notes*/
+.current-notes {
+  position: absolute;
+  bottom: 0; right: 0;
+  width: 200px;
+  height: 200px;
+  background-color: blue;
+}
