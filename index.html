@@ -8,67 +8,71 @@
 <body ng-controller="PianoController">
   <div class="p-wrapper p-wrapper-lower">
     <ul class="piano piano-lower">
-      <li><div class="anchor note" data-note="A1"></div></li>
-      <li><div class="anchor note" data-note="B1"></div><span class="note" data-note="Bb1"></span></li>
-      <li><div class="anchor note" data-note="C2"></div></li>
-      <li><div class="anchor note" data-note="D2"></div><span class="note" data-note="Db2"></span></li>
-      <li><div class="anchor note" data-note="E2"></div><span class="note" data-note="Eb2"></span></li>
-      <li><div class="anchor note" data-note="F2"></div></li>
-      <li><div class="anchor note" data-note="G2"></div><span class="note" data-note="Gb2"></span></li>
-      <li><div class="anchor note" data-note="A2"></div><span class="note" data-note="Ab2"></span></li>
-      <li><div class="anchor note" data-note="B2"></div><span class="note" data-note="Bb2"></span></li>
-      <li><div class="anchor note" data-note="C3"></div></li>
-      <li><div class="anchor note" data-note="D3"></div><span class="note" data-note="Db3"></span></li>
-      <li><div class="anchor note" data-note="E3"></div><span class="note" data-note="Eb3"></span></li>
-      <li><div class="anchor note" data-note="F3"></div></li>
-      <li><div class="anchor note" data-note="G3"></div><span class="note" data-note="Gb3"></span></li>
-      <li><div class="anchor note" data-note="A3"></div><span class="note" data-note="Ab3"></span></li>
-      <li><div class="anchor note" data-note="B3"></div><span class="note" data-note="Bb3"></span></li>
-      <li><div class="anchor note" data-note="C4"></div></li>
-      <li><div class="anchor note" data-note="D4"></div><span class="note" data-note="Db4"></span></li>
-      <li><div class="anchor note" data-note="E4"></div><span class="note" data-note="Eb4"></span></li>
-      <li><div class="anchor note" data-note="F4"></div></li>
-      <li><div class="anchor note" data-note="G4"></div><span class="note" data-note="Gb4"></span></li>
-      <li><div class="anchor note" data-note="A4"></div><span class="note" data-note="Ab4"></span></li>
-      <li><div class="anchor note" data-note="B4"></div><span class="note" data-note="Bb4"></span></li>
-      <li><div class="anchor rest"></div></li>
+      <li><div class="anchor note" data-note="A1" ng-click="click($event.target)"></div></li>
+      <li><div class="anchor note" data-note="B1" ng-click="click($event.target)"></div><span class="note" data-note="Bb1" ng-click="click($event.target)"></span></li>
+      <li><div class="anchor note" data-note="C2" ng-click="click($event.target)"></div></li>
+      <li><div class="anchor note" data-note="D2" ng-click="click($event.target)"></div><span class="note" data-note="Db2" ng-click="click($event.target)"></span></li>
+      <li><div class="anchor note" data-note="E2" ng-click="click($event.target)"></div><span class="note" data-note="Eb2" ng-click="click($event.target)"></span></li>
+      <li><div class="anchor note" data-note="F2" ng-click="click($event.target)"></div></li>
+      <li><div class="anchor note" data-note="G2" ng-click="click($event.target)"></div><span class="note" data-note="Gb2" ng-click="click($event.target)"></span></li>
+      <li><div class="anchor note" data-note="A2" ng-click="click($event.target)"></div><span class="note" data-note="Ab2" ng-click="click($event.target)"></span></li>
+      <li><div class="anchor note" data-note="B2" ng-click="click($event.target)"></div><span class="note" data-note="Bb2" ng-click="click($event.target)"></span></li>
+      <li><div class="anchor note" data-note="C3" ng-click="click($event.target)"></div></li>
+      <li><div class="anchor note" data-note="D3" ng-click="click($event.target)"></div><span class="note" data-note="Db3" ng-click="click($event.target)"></span></li>
+      <li><div class="anchor note" data-note="E3" ng-click="click($event.target)"></div><span class="note" data-note="Eb3" ng-click="click($event.target)"></span></li>
+      <li><div class="anchor note" data-note="F3" ng-click="click($event.target)"></div></li>
+      <li><div class="anchor note" data-note="G3" ng-click="click($event.target)"></div><span class="note" data-note="Gb3" ng-click="click($event.target)"></span></li>
+      <li><div class="anchor note" data-note="A3" ng-click="click($event.target)"></div><span class="note" data-note="Ab3" ng-click="click($event.target)"></span></li>
+      <li><div class="anchor note" data-note="B3" ng-click="click($event.target)"></div><span class="note" data-note="Bb3" ng-click="click($event.target)"></span></li>
+      <li><div class="anchor note" data-note="C4" ng-click="click($event.target)"></div></li>
+      <li><div class="anchor note" data-note="D4" ng-click="click($event.target)"></div><span class="note" data-note="Db4" ng-click="click($event.target)"></span></li>
+      <li><div class="anchor note" data-note="E4" ng-click="click($event.target)"></div><span class="note" data-note="Eb4" ng-click="click($event.target)"></span></li>
+      <li><div class="anchor note" data-note="F4" ng-click="click($event.target)"></div></li>
+      <li><div class="anchor note" data-note="G4" ng-click="click($event.target)"></div><span class="note" data-note="Gb4" ng-click="click($event.target)"></span></li>
+      <li><div class="anchor note" data-note="A4" ng-click="click($event.target)"></div><span class="note" data-note="Ab4" ng-click="click($event.target)"></span></li>
+      <li><div class="anchor note" data-note="B4" ng-click="click($event.target)"></div><span class="note" data-note="Bb4" ng-click="click($event.target)"></span></li>
+      <li><div class="anchor rest" ng-click="click($event.target)"></div></li>
     </ul>
   </div>
   <div class="p-wrapper">
     <ul class="piano">
-      <li><div class="anchor note" data-note="C5"></div></li>
-      <li><div class="anchor note" data-note="D5"></div><span class="note" data-note="Db5"></span></li>
-      <li><div class="anchor note" data-note="E5"></div><span class="note" data-note="Eb5"></span></li>
-      <li><div class="anchor note" data-note="F5"></div></li>
-      <li><div class="anchor note" data-note="G5"></div><span class="note" data-note="Gb5"></span></li>
-      <li><div class="anchor note" data-note="A5"></div><span class="note" data-note="Ab4"></span></li>
-      <li><div class="anchor note" data-note="B5"></div><span class="note" data-note="Bb4"></span></li>
-      <li><div class="anchor note" data-note="C6"></div></li>
-      <li><div class="anchor note" data-note="D6"></div><span class="note" data-note="Db6"></span></li>
-      <li><div class="anchor note" data-note="E6"></div><span class="note" data-note="Eb6"></span></li>
-      <li><div class="anchor note" data-note="F6"></div></li>
-      <li><div class="anchor note" data-note="G6"></div><span class="note" data-note="Gb6"></span></li>
-      <li><div class="anchor note" data-note="A6"></div><span class="note" data-note="Ab6"></span></li>
-      <li><div class="anchor note" data-note="B6"></div><span class="note" data-note="Bb6"></span></li>
-      <li><div class="anchor note" data-note="C7"></div></li>
-      <li><div class="anchor note" data-note="D7"></div><span class="note" data-note="Db7"></span></li>
-      <li><div class="anchor note" data-note="E7"></div><span class="note" data-note="Eb7"></span></li>
-      <li><div class="anchor note" data-note="F7"></div></li>
-      <li><div class="anchor note" data-note="G7"></div><span class="note" data-note="Gb7"></span></li>
-      <li><div class="anchor note" data-note="A7"></div><span class="note" data-note="Ab7"></span></li>
-      <li><div class="anchor note" data-note="B7"></div><span class="note" data-note="Bb7"></span></li>
-      <li><div class="anchor note" data-note="C8"></div></li>
+      <li><div class="anchor note" data-note="C5" ng-click="click($event.target)"></div></li>
+      <li><div class="anchor note" data-note="D5" ng-click="click($event.target)"></div><span class="note" data-note="Db5" ng-click="click($event.target)"></span></li>
+      <li><div class="anchor note" data-note="E5" ng-click="click($event.target)"></div><span class="note" data-note="Eb5" ng-click="click($event.target)"></span></li>
+      <li><div class="anchor note" data-note="F5" ng-click="click($event.target)"></div></li>
+      <li><div class="anchor note" data-note="G5" ng-click="click($event.target)"></div><span class="note" data-note="Gb5" ng-click="click($event.target)"></span></li>
+      <li><div class="anchor note" data-note="A5" ng-click="click($event.target)"></div><span class="note" data-note="Ab4" ng-click="click($event.target)"></span></li>
+      <li><div class="anchor note" data-note="B5" ng-click="click($event.target)"></div><span class="note" data-note="Bb4" ng-click="click($event.target)"></span></li>
+      <li><div class="anchor note" data-note="C6" ng-click="click($event.target)"></div></li>
+      <li><div class="anchor note" data-note="D6" ng-click="click($event.target)"></div><span class="note" data-note="Db6" ng-click="click($event.target)"></span></li>
+      <li><div class="anchor note" data-note="E6" ng-click="click($event.target)"></div><span class="note" data-note="Eb6" ng-click="click($event.target)"></span></li>
+      <li><div class="anchor note" data-note="F6" ng-click="click($event.target)"></div></li>
+      <li><div class="anchor note" data-note="G6" ng-click="click($event.target)"></div><span class="note" data-note="Gb6" ng-click="click($event.target)"></span></li>
+      <li><div class="anchor note" data-note="A6" ng-click="click($event.target)"></div><span class="note" data-note="Ab6" ng-click="click($event.target)"></span></li>
+      <li><div class="anchor note" data-note="B6" ng-click="click($event.target)"></div><span class="note" data-note="Bb6" ng-click="click($event.target)"></span></li>
+      <li><div class="anchor note" data-note="C7" ng-click="click($event.target)"></div></li>
+      <li><div class="anchor note" data-note="D7" ng-click="click($event.target)"></div><span class="note" data-note="Db7" ng-click="click($event.target)"></span></li>
+      <li><div class="anchor note" data-note="E7" ng-click="click($event.target)"></div><span class="note" data-note="Eb7" ng-click="click($event.target)"></span></li>
+      <li><div class="anchor note" data-note="F7" ng-click="click($event.target)"></div></li>
+      <li><div class="anchor note" data-note="G7" ng-click="click($event.target)"></div><span class="note" data-note="Gb7" ng-click="click($event.target)"></span></li>
+      <li><div class="anchor note" data-note="A7" ng-click="click($event.target)"></div><span class="note" data-note="Ab7" ng-click="click($event.target)"></span></li>
+      <li><div class="anchor note" data-note="B7" ng-click="click($event.target)"></div><span class="note" data-note="Bb7" ng-click="click($event.target)"></span></li>
+      <li><div class="anchor note" data-note="C8" ng-click="click($event.target)"></div></li>
     </ul>
   </div>
 
-  <div class="info-display">
-    <span class="current-notes"></span>
-    <span class="note-length"></span>
+  <div class="display">
+    <div class="info-display">
+      <span class="current-notes"></span>
+      <span class="note-length"></span>
+    </div>
   </div>
+
   <button class="add">Add</button>
   <button class="play">Play</button>
 
   <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script> <!-- Change this to be // on production -->
   <script src="scripts/band.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
   <script src="app.js"></script>
 </body>
