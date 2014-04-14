@@ -22,6 +22,7 @@
     }
     var notes = Object.keys(currentNotes).join(', ');
     songNotes.push([notes, 'quarter']);
+    currentNotes = [];
   };
 
   var toJSON = function() {
