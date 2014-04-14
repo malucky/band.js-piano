@@ -44,7 +44,7 @@ ul.piano li div.anchor.rest {
   background: linear-gradient(-30deg,grey, #f5f5f5);
 }
 
-.add, .play {
+.add, .play, .json {
   position: fixed;
   top: 5px;
   right: 5px;
@@ -54,4 +54,12 @@ ul.piano li div.anchor.rest {
 
 .play {
   top: 50px;
+}
+
+.json {
+  top: 100px;
+}
+
+textarea.modal-body.ng-scope {
+  width: 100%;
 }
