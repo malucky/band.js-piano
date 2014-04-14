@@ -2,18 +2,6 @@ angular.module('pianoApp', [])
 
   .controller('PianoController', function ($scope) {
 
-    $scope.click = function ($event, note) {
-      if($event.target.classList.contains('selected')) {
-        removeNote($event.target, note);
-      } else {
-        addNote($event.target, note);
-      }
-    };
-
-    $scope.keypress = function(key) {
-      keyMap[key]();
-    };
-
     var music = new BandJS();
     var currentNotes = {};
     var currentNotesDuration = "";
@@ -34,6 +22,18 @@ angular.module('pianoApp', [])
       // $currentNotesDisplay.text(Object.keys(currentNotes));
     };
 
+    $scope.click = function ($event, note) {
+      if($event.target.classList.contains('selected')) {
+        removeNote($event.target, note);
+      } else {
+        addNote($event.target, note);
+      }
+    };
+
+    $scope.keypress = function(key) {
+      keyMap[key]();
+    };
+
     // var handleKeypress = function (event) {
     //   var whichKey = event.which;
 
@@ -46,7 +46,7 @@ angular.module('pianoApp', [])
     //   }
     // };
 
-    var addNotesToSong = function addNotesToSong() {
+    $scope.addNotesToSong = function addNotesToSong() {
       for (var key in currentNotes) {
         currentNotes[key].classList.remove('selected');
       }
@@ -55,7 +55,7 @@ angular.module('pianoApp', [])
       currentNotes = [];
     };
 
-    var toJSON = function () {
+    $scope.toJSON = function () {
       var result = {};
       result.timeSignature = [4, 4];
       result.tempo = 100;
@@ -86,7 +86,7 @@ angular.module('pianoApp', [])
       52: 'quarter',
       56: 'eighth',
       49: 'whole',
-      65: addNotesToSong
+      65: $scope.addNotesToSong
     };
   });
 
