@@ -32,7 +32,7 @@
       <li><div class="anchor note" ng-click="click($event, 'G4')"></div><span class="note"  ng-click="click($event, 'Gb4')"></span></li>
       <li><div class="anchor note" ng-click="click($event, 'A4')"></div><span class="note"  ng-click="click($event, 'Ab4')"></span></li>
       <li><div class="anchor note" ng-click="click($event, 'B4')"></div><span class="note"  ng-click="click($event, 'Bb4')"></span></li>
-      <li><div class="anchor rest" ng-click="click($event, 'rest')"></div></li>
+      <li><div class="anchor rest" ng-click="click($event, 'rest')"></div></li> <!-- Not Yet Implemented -->
     </ul>
   </div>
   <div class="p-wrapper">
@@ -68,9 +68,9 @@
     </div>
   </div>
 
-  <button class="add" ng-click="addNotesToSong()">Add</button>
-  <button class="play" ng-click="play()">Play</button>
-  <button class="json" ng-click="open()">Get JSON</button>
+  <button class="btn add" ng-click="addNotesToSong()">Add</button>
+  <button class="btn play" ng-click="play()">Play</button>
+  <button class="btn json" ng-click="open()">Get JSON</button>
 
 
   <!-- Modal to display JSON -->

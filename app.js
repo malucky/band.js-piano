@@ -66,7 +66,6 @@ angular.module('pianoApp', ['ui.bootstrap'])
         rhythm: note[1] // rhythm
       });
     });
-    console.log($scope.songNotes);
 
     return result;
   };
@@ -90,10 +89,15 @@ angular.module('pianoApp', ['ui.bootstrap'])
         }
       }
     });
+    // ToDo: Import from JSON
+    // modalInstance.result.then(function (json) {
+    //   $scope.json = json;
+    // });
   };
 
   /* helper to add a note to the current notes */
   var addNote = function (el, note) {
+    if (note === 'rest') return; //TODO: implement rest
     $scope.currentNotes[note] = el;
     el.classList.add('selected');
   };
@@ -111,6 +115,6 @@ angular.module('pianoApp', ['ui.bootstrap'])
 var ModalInstanceCtrl = function ($scope, $modalInstance, json) {
   $scope.json = angular.toJson(json, true);
   $scope.closeModal = function () {
-    $modalInstance.close();
+    $modalInstance.close($scope.json);
   };
 };
