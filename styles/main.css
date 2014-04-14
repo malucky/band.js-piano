@@ -13,8 +13,8 @@ ul.piano {
   margin: auto;
 }
 
-.selected {
-  background: rgb(243, 255, 155) !important; /* Refactor this, important = sketchy */
+ul.piano li .note.selected {
+  background: rgb(243, 255, 155);
 }
 
 .p-wrapper-lower {
