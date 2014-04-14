@@ -1,58 +1,30 @@
 angular.module('pianoApp', [])
-
   .controller('PianoController', function ($scope) {
-
-    var music = new BandJS();
-    var currentNotes = {};
-    var currentNotesDuration = "";
-    var songNotes = [];
-
-    // var $notesDurationDisplay = $('.note-length');
-    // var $currentNotesDisplay = $('.current-notes'); 
-
-    var addNote = function(el, note) {
-      currentNotes[note] = el;
-      el.classList.add('selected');
-      // $currentNotesDisplay.text(Object.keys(currentNotes));
-    };
-
-    var removeNote = function (el, note) {
-      delete currentNotes[note];
-      el.classList.remove('selected');
-      // $currentNotesDisplay.text(Object.keys(currentNotes));
-    };
+    $scope.currentNotes = {};
+    $scope.currentDuration = "";
+    $scope.songNotes = [];
 
     $scope.click = function ($event, note) {
-      if($event.target.classList.contains('selected')) {
+      if ($event.target.classList.contains('selected')) {
         removeNote($event.target, note);
       } else {
         addNote($event.target, note);
       }
     };
 
-    $scope.keypress = function(key) {
-      keyMap[key]();
+    $scope.updateDuration = function (duration) {
+      $scope.currentDuration = duration;
+      $scope.$apply();
     };
 
-    // var handleKeypress = function (event) {
-    //   var whichKey = event.which;
-
-    //   if (keyMap[whichKey]) {
-    //     currentNotesDuration = keyMap[whichKey];
-    //     $notesDurationDisplay.text(keyMap[whichKey]);
-    //     console.log($notesDurationDisplay.text());
-    //   } else if (whichKey === 97) {
-    //     addNotesToSong();
-    //   }
-    // };
-
-    $scope.addNotesToSong = function addNotesToSong() {
-      for (var key in currentNotes) {
-        currentNotes[key].classList.remove('selected');
+    $scope.addNotesToSong = function () {
+      for (var key in $scope.currentNotes) {
+        $scope.currentNotes[key].classList.remove('selected');
       }
-      var notes = Object.keys(currentNotes).join(', ');
-      songNotes.push([notes, 'quarter']);
-      currentNotes = [];
+      var notes = Object.keys($scope.currentNotes).join(', ');
+      var duration = $scope.currentDuration || 'quarter';
+      $scope.songNotes.push([notes, duration]);
+      $scope.currentNotes = [];
     };
 
     $scope.toJSON = function () {
@@ -69,12 +41,12 @@ angular.module('pianoApp', [])
         rightHand: []
       };
 
-      songNotes.forEach(function (note) {
+      $scope.songNotes.forEach(function (note) {
         result.notes.rightHand.push({
           type: 'note',
-            pitch: note[0], // Set of notes
-            rhythm: note[1] // rhythm
-          });
+          pitch: note[0], // Set of notes
+          rhythm: note[1] // rhythm
+        });
       });
 
       music.load(result);
@@ -82,11 +54,17 @@ angular.module('pianoApp', [])
       music.play();
     };
 
-    var keyMap = {
-      52: 'quarter',
-      56: 'eighth',
-      49: 'whole',
-      65: $scope.addNotesToSong
+    var addNote = function (el, note) {
+      $scope.currentNotes[note] = el;
+      el.classList.add('selected');
     };
-  });
 
+    var removeNote = function (el, note) {
+      delete $scope.currentNotes[note];
+      el.classList.remove('selected');
+    };
+
+
+
+    var music = new BandJS();
+  });
