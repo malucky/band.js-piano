@@ -8,18 +8,18 @@
 <body ng-controller="PianoController">
   <div class="p-wrapper p-wrapper-lower">
     <ul class="piano piano-lower">
-      <li><div class="anchor note" data-note="A1" ng-click="click($event)"></div></li>
-      <li><div class="anchor note" data-note="B1" ng-click="click($event)"></div><span class="note" data-note="Bb1" ng-click="click($event)"></span></li>
-      <li><div class="anchor note" data-note="C2" ng-click="click($event)"></div></li>
-      <li><div class="anchor note" data-note="D2" ng-click="click($event)"></div><span class="note" data-note="Db2" ng-click="click($event)"></span></li>
-      <li><div class="anchor note" data-note="E2" ng-click="click($event)"></div><span class="note" data-note="Eb2" ng-click="click($event)"></span></li>
-      <li><div class="anchor note" data-note="F2" ng-click="click($event)"></div></li>
-      <li><div class="anchor note" data-note="G2" ng-click="click($event)"></div><span class="note" data-note="Gb2" ng-click="click($event)"></span></li>
-      <li><div class="anchor note" data-note="A2" ng-click="click($event)"></div><span class="note" data-note="Ab2" ng-click="click($event)"></span></li>
-      <li><div class="anchor note" data-note="B2" ng-click="click($event)"></div><span class="note" data-note="Bb2" ng-click="click($event)"></span></li>
-      <li><div class="anchor note" data-note="C3" ng-click="click($event)"></div></li>
-      <li><div class="anchor note" data-note="D3" ng-click="click($event)"></div><span class="note" data-note="Db3" ng-click="click($event)"></span></li>
-      <li><div class="anchor note" data-note="E3" ng-click="click($event)"></div><span class="note" data-note="Eb3" ng-click="click($event)"></span></li>
+      <li><div class="anchor note" ng-click="click($event, 'A1')"></div></li>
+      <li><div class="anchor note" ng-click="click($event, 'B1')"></div><span class="note" ng-click="click($event, 'Bb1')"></span></li>
+      <li><div class="anchor note" ng-click="click($event, 'C2')"></div></li>
+      <li><div class="anchor note" ng-click="click($event, 'D2')"></div><span class="note" ng-click="click($event, 'Db2')"></span></li>
+      <li><div class="anchor note" ng-click="click($event, 'E2')"></div><span class="note" ng-click="click($event, 'Eb2')"></span></li>
+      <li><div class="anchor note" ng-click="click($event, 'F2')"></div></li>
+      <li><div class="anchor note" ng-click="click($event, 'G2')"></div><span class="note" ng-click="click($event, 'Gb2')"></span></li>
+      <li><div class="anchor note" ng-click="click($event, 'A2')"></div><span class="note" ng-click="click($event, 'Ab2')"></span></li>
+      <li><div class="anchor note" ng-click="click($event, 'B2')"></div><span class="note" ng-click="click($event, 'Bb2')"></span></li>
+      <li><div class="anchor note" ng-click="click($event, 'C3')"></div></li>
+      <li><div class="anchor note" ng-click="click($event, 'D3')"></div><span class="note" ng-click="click($event, 'Db3')"></span></li>
+      <li><div class="anchor note" ng-click="click($event, 'E3')"></div><span class="note" ng-click="click($event, 'Eb3')"></span></li>
       <li><div class="anchor note" data-note="F3" ng-click="click($event)"></div></li>
       <li><div class="anchor note" data-note="G3" ng-click="click($event)"></div><span class="note" data-note="Gb3" ng-click="click($event)"></span></li>
       <li><div class="anchor note" data-note="A3" ng-click="click($event)"></div><span class="note" data-note="Ab3" ng-click="click($event)"></span></li>
@@ -36,8 +36,8 @@
   </div>
   <div class="p-wrapper">
     <ul class="piano">
-      <li><div class="anchor note" data-note="C5" ng-click="click($event)"></div></li>
-      <li><div class="anchor note" data-note="D5" ng-click="click($event)"></div><span class="note" data-note="Db5" ng-click="click($event)"></span></li>
+      <li><div class="anchor note" ng-click="click($event, 'C5')"></div></li>
+      <li><div class="anchor note" ng-click="click($event, 'D5')"></div><span class="note"  ng-click="click($event)"></span></li>
       <li><div class="anchor note" data-note="E5" ng-click="click($event)"></div><span class="note" data-note="Eb5" ng-click="click($event)"></span></li>
       <li><div class="anchor note" data-note="F5" ng-click="click($event)"></div></li>
       <li><div class="anchor note" data-note="G5" ng-click="click($event)"></div><span class="note" data-note="Gb5" ng-click="click($event)"></span></li>
@@ -74,6 +74,5 @@
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
   <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script> <!-- Change this to be // on production -->
   <script src="scripts/band.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
   <script src="app.js"></script>
 </body>
