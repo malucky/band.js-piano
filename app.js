@@ -1,6 +1,6 @@
-angular.module('pianoApp', [])
+angular.module('pianoApp', ['ui.bootstrap'])
 
-  .controller('PianoController', function ($scope) {
+  .controller('PianoController', function ($scope, $modal) {
     $scope.currentNotes = {};
     $scope.currentDuration = "";
     $scope.songNotes = [];
@@ -60,6 +60,19 @@ angular.module('pianoApp', [])
       music.play();
     };
 
+    // Create new modal instance and open it 
+    $scope.open = function () {
+      var modalInstance = $modal.open({
+        templateUrl: 'modal.html',
+        controller: ModalInstanceCtrl,
+        resolve: {
+          json: function () {
+            return $scope.toJSON();
+          }
+        }
+      });
+    };
+
     var addNote = function (el, note) {
       $scope.currentNotes[note] = el;
       el.classList.add('selected');
@@ -72,3 +85,11 @@ angular.module('pianoApp', [])
 
     var music = new BandJS();
   });
+
+
+var ModalInstanceCtrl = function($scope, $modalInstance, json) {
+  $scope.json = angular.toJson(json, true);
+  $scope.closeModal = function () {
+    $modalInstance.close();
+  };
+};
