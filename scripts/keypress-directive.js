@@ -17,6 +17,14 @@ angular.module('pianoApp')
             scope.addNotesToSong();
           } else if (keyBindingMap[keyPressed]) { //a key that specifies duration
             scope.updateDuration(keyBindingMap[keyPressed]);
+          } else if (keyPressed === 37) { //left arrow
+
+          } else if (keyPressed === 39) { //right arrow
+
+          } else if (keyPressed === 8) { //delete
+
+          } else if (keyPressed === 13) { //enter
+
           }
         });
       });

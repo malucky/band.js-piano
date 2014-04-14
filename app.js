@@ -23,7 +23,7 @@ angular.module('pianoApp', ['ui.bootstrap'])
     if (Object.keys($scope.currentNotes).length < 1) {
       return;
     }
-    $scope.currentIndex++;
+    $scope.currentIndex = $scope.songNotes.length;
     for (var key in $scope.currentNotes) {
       $scope.currentNotes[key].classList.remove('selected');
     }
