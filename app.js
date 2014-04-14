@@ -71,6 +71,10 @@ angular.module('pianoApp', ['ui.bootstrap'])
           }
         }
       });
+      // ToDo: Import from JSON
+      // modalInstance.result.then(function (json) {
+      //   $scope.json = json;
+      // });
     };
 
     var addNote = function (el, note) {
@@ -90,6 +94,6 @@ angular.module('pianoApp', ['ui.bootstrap'])
 var ModalInstanceCtrl = function($scope, $modalInstance, json) {
   $scope.json = angular.toJson(json, true);
   $scope.closeModal = function () {
-    $modalInstance.close();
+    $modalInstance.close($scope.json);
   };
 };
