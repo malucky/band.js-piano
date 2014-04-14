@@ -5,7 +5,7 @@
   <link rel="stylesheet" href="styles/piano.css"/>
   <link rel="stylesheet" href="styles/main.css"/>
 </head>
-<body ng-controller="PianoController">
+<body ng-controller="PianoController" ng-enter="doSomething()">
   <div class="p-wrapper p-wrapper-lower">
     <ul class="piano piano-lower">
       <li><div class="anchor note" ng-click="click($event, 'A1')"></div></li>
@@ -68,11 +68,12 @@
     </div>
   </div>
 
-  <button class="add">Add</button>
-  <button class="play">Play</button>
+  <button class="add" ng-click="addNotesToSong()">Add</button>
+  <button class="play" ng-click="toJSON()">Play</button>
 
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
-  <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script> <!-- Change this to be // on production -->
   <script src="scripts/band.min.js"></script>
   <script src="app.js"></script>
+  <script src="scripts/keypress-directive.js"></script>
 </body>
+</html>
