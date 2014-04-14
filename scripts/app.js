@@ -1,12 +1,14 @@
 (function () {
 
+  var music = new BandJS();
   var currentNotes = {};
   var currentNotesDuration = "";
+  var songNotes = [];
 
   var keyMap = {
     '52': 'quarter',
     '56': 'eighth',
-    '49': 'whole'
+    '49': 'whole',
   };
 
   var $notesDurationDisplay = $('.note-length');
@@ -47,7 +49,44 @@
       console.log($notesDurationDisplay.text());
     } else if (whichKey === 13) { //enter
       submitNotes();
+    } else if (whichKey === 97) {
+      addNotesToSong();
     }
+  };
+  var addNotesToSong = function () {
+    for (var key in currentNotes) {
+      currentNotes[key].removeClass('selected');
+    }
+    var notes = Object.keys(currentNotes).join(', ');
+    songNotes.push([notes, 'quarter']);
+    currentNotes = [];
+  };
+
+  var toJSON = function () {
+    var result = {};
+    result.timeSignature = [4, 4];
+    result.tempo = 100;
+    result.instruments = {
+      rightHand: {
+        name: 'square',
+        pack: 'oscillators'
+      }
+    };
+    result.notes = {
+      rightHand: []
+    };
+
+    songNotes.forEach(function (note) {
+      result.notes.rightHand.push({
+        type: 'note',
+        pitch: note[0],
+        rhythm: note[1]
+      });
+    });
+
+    music.load(result);
+    music.end();
+    music.play();
   };
 
   $(document).ready(function () {
@@ -61,6 +100,9 @@
     });
     // keypress handling
     $(document).keypress(handleKeypress);
+    // Display notes
+    $('.add').on('click', addNotesToSong);
+    $('.play').on('click', toJSON);
   });
 
 })();
