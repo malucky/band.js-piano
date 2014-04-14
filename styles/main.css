@@ -34,10 +34,18 @@ ul.piano.piano-lower {
 
 /*display the current notes*/
 .info-display {
-  position: absolute;
-  bottom: 0; right: 0;
+  display: inline-block;
   width: 200px;
-  height: 100px;
+  height: 100%;
+}
+
+.song-display {
+  display: inline-block;
+  font-size: 24px;
+  height: 100%;
+  width: calc(100% - 220px);
+  vertical-align: top;
+  overflow: scroll;
 }
 
 ul.piano li div.anchor.rest {
@@ -54,4 +62,8 @@ ul.piano li div.anchor.rest {
 
 .play {
   top: 50px;
+}
+
+.instrument-name {
+  color: gold;
 }

@@ -4,6 +4,8 @@ angular.module('pianoApp', [])
     $scope.currentDuration = "";
     $scope.songNotes = [];
 
+    $scope.currentIndex = 0;
+
     $scope.click = function ($event, note) {
       if ($event.target.classList.contains('selected')) {
         removeNote($event.target, note);
@@ -18,12 +20,17 @@ angular.module('pianoApp', [])
     };
 
     $scope.addNotesToSong = function () {
+      if (Object.keys($scope.currentNotes).length < 1) {
+        return;
+      }
+      $scope.currentIndex++;
       for (var key in $scope.currentNotes) {
         $scope.currentNotes[key].classList.remove('selected');
       }
       var notes = Object.keys($scope.currentNotes).join(', ');
       var duration = $scope.currentDuration || 'quarter';
       $scope.songNotes.push([notes, duration]);
+      $scope.$apply();
       $scope.currentNotes = [];
     };
 
@@ -63,8 +70,6 @@ angular.module('pianoApp', [])
       delete $scope.currentNotes[note];
       el.classList.remove('selected');
     };
-
-
 
     var music = new BandJS();
   });
