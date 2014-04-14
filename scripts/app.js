@@ -42,8 +42,8 @@
     songNotes.forEach(function(note) {
       result.notes.rightHand.push({
         type: 'note',
-        pitch: note[0],
-        rhythm: note[1]
+        pitch: note[0], // Set of notes
+        rhythm: note[1] // rhythm
       });
     });
 
@@ -64,7 +64,12 @@
     // Display notes
     $('.add').on('click', addNotesToSong);
     $('.play').on('click', toJSON);
-    toJSON();
+
+    $(document).keypress(function(e) {
+      if(e.which === 97) {
+        addNotesToSong();
+      }
+    });
   });
 
 })();
