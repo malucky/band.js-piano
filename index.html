@@ -2,6 +2,7 @@
 <html ng-app="pianoApp">
 <head>
   <meta charset="utf-8">
+  <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="styles/piano.css"/>
   <link rel="stylesheet" href="styles/main.css"/>
 </head>
@@ -69,8 +70,22 @@
 
   <button class="add" ng-click="addNotesToSong()">Add</button>
   <button class="play" ng-click="play()">Play</button>
+  <button class="json" ng-click="open()">Get JSON</button>
+
+
+  <!-- Modal -->
+  <script type="text/ng-template" id="modal.html">
+    <div class="modal-header">
+      <h3>Copy the JSON!</h3>
+    </div>
+    <textarea class="modal-body" ng-model="json"></textarea>
+    <div class="modal-footer">
+      <button class="btn btn-primary" ng-click="closeModal()">OK</button>
+    </div>
+  </script>
 
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
+  <script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.10.0.js"></script>
   <script src="scripts/band.min.js"></script>
   <script src="app.js"></script>
   <script src="scripts/keypress-directive.js"></script>
