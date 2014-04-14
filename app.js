@@ -1,3 +1,9 @@
+angular.module('pianoApp', [])
+  .controller('PianoController', function ($scope) {
+    $scope.click = function (el) {
+      console.log(el);
+    };
+  });
 (function () {
 
   var music = new BandJS();
@@ -29,17 +35,6 @@
     $currentNotesDisplay.text(Object.keys(currentNotes));
   };
 
-  var submitNotes = function () {
-    if (Object.keys(currentNotes).length && currentNotesDuration) { //if there are notes and a duration is specified
-      for (var key in currentNotes) {
-        currentNotes[key].removeClass('selected');
-      }
-      console.log(Object.keys(currentNotes));
-      $notesDurationDisplay.text("");
-      $currentNotesDisplay.text("");
-    }
-  };
-
   var handleKeypress = function (event) {
     var whichKey = event.which;
 
@@ -47,8 +42,6 @@
       currentNotesDuration = keyMap[whichKey];
       $notesDurationDisplay.text(keyMap[whichKey]);
       console.log($notesDurationDisplay.text());
-    } else if (whichKey === 13) { //enter
-      submitNotes();
     } else if (whichKey === 97) {
       addNotesToSong();
     }
@@ -79,8 +72,8 @@
     songNotes.forEach(function (note) {
       result.notes.rightHand.push({
         type: 'note',
-        pitch: note[0],
-        rhythm: note[1]
+        pitch: note[0], // Set of notes
+        rhythm: note[1] // rhythm
       });
     });
 
