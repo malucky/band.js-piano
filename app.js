@@ -16,7 +16,6 @@ angular.module('pianoApp', [])
 
     $scope.updateDuration = function (duration) {
       $scope.currentDuration = duration;
-      $scope.$apply();
     };
 
     $scope.addNotesToSong = function () {
@@ -30,7 +29,6 @@ angular.module('pianoApp', [])
       var notes = Object.keys($scope.currentNotes).join(', ');
       var duration = $scope.currentDuration || 'quarter';
       $scope.songNotes.push([notes, duration]);
-      $scope.$apply();
       $scope.currentNotes = [];
     };
 
@@ -55,6 +53,7 @@ angular.module('pianoApp', [])
           rhythm: note[1] // rhythm
         });
       });
+      console.log($scope.songNotes);
 
       music.load(result);
       music.end();

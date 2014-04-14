@@ -8,15 +8,18 @@ angular.module('pianoApp')
     };
 
     return function (scope, element, attrs) {
-      element.bind("keypress", function (event) {
+      element.bind('keypress keydown', function (event) {
         var keyPressed = event.which;
         console.log(keyPressed);
         event.preventDefault();
-        if (keyPressed === 97) { // Keypress 'a' to add selected notes to song
-          scope.addNotesToSong();
-        } else if (keyBindingMap[keyPressed]) { //a key that specifies duration
-          scope.updateDuration(keyBindingMap[keyPressed]);
-        }
+
+        scope.$apply(function () {
+          if (keyPressed === 97) { // Keypress 'a' to add selected notes to song
+            scope.addNotesToSong();
+          } else if (keyBindingMap[keyPressed]) { //a key that specifies duration
+            scope.updateDuration(keyBindingMap[keyPressed]);
+          }
+        });
       });
     };
   });
