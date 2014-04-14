@@ -1,4 +1,5 @@
 angular.module('pianoApp', [])
+
   .controller('PianoController', function ($scope) {
     $scope.currentNotes = {};
     $scope.currentDuration = "";
@@ -49,7 +50,12 @@ angular.module('pianoApp', [])
         });
       });
 
-      music.load(result);
+      return result;
+    };
+
+    $scope.play = function() {
+      var song = $scope.toJSON();
+      music.load(song);
       music.end();
       music.play();
     };
@@ -63,8 +69,6 @@ angular.module('pianoApp', [])
       delete $scope.currentNotes[note];
       el.classList.remove('selected');
     };
-
-
 
     var music = new BandJS();
   });
