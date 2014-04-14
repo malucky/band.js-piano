@@ -1,3 +1,6 @@
+html, body {
+  height: 100%;
+}
 .p-wrapper {
   left: 0;
   margin: auto;
@@ -11,7 +14,7 @@ ul.piano {
 }
 
 .selected {
-  background: red !important; /* Refactor this, important = sketchy */
+  background: rgb(243, 255, 155) !important; /* Refactor this, important = sketchy */
 }
 
 .p-wrapper-lower {
@@ -22,13 +25,19 @@ ul.piano.piano-lower {
   width: 960px;
 }
 
+.display {
+  position: relative;
+  margin-top: 20px;
+  height: 250px;
+  border: 2px black solid;
+}
+
 /*display the current notes*/
 .info-display {
   position: absolute;
   bottom: 0; right: 0;
   width: 200px;
-  height: 200px;
-  background-color: blue;
+  height: 100px;
 }
 
 .rest {
@@ -36,4 +45,16 @@ ul.piano.piano-lower {
   background-image: url(../images/rest.png) !important;
   width: 40px;
   height: 40px;
+}
+
+.add, .play {
+  position: fixed;
+  top: 5px;
+  right: 5px;
+  width: 40px;
+  height: 40px;
+}
+
+.play {
+  top: 50px;
 }
