@@ -46,18 +46,18 @@ ul.piano li div.anchor.rest {
 
 .add, .play, .json {
   position: fixed;
-  top: 5px;
-  right: 5px;
-  width: 40px;
+  top: 10px;
+  right: 10px;
+  width: 100px;
   height: 40px;
 }
 
 .play {
-  top: 50px;
+  top: 60px;
 }
 
 .json {
-  top: 100px;
+  top: 110px;
 }
 
 textarea.modal-body.ng-scope {
