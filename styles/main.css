@@ -33,7 +33,6 @@ ul.piano.piano-lower {
 
 .rest {
   display: inline-block;
-  background-image: url(../images/rest.png) !important;
   width: 40px;
   height: 40px;
 }

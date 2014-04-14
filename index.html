@@ -1,11 +1,11 @@
 <!doctype html>
-<html>
+<html ng-app="pianoApp">
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" href="styles/piano.css"/>
   <link rel="stylesheet" href="styles/main.css"/>
 </head>
-<body>
+<body ng-controller="PianoController">
   <div class="p-wrapper p-wrapper-lower">
     <ul class="piano piano-lower">
       <li><div class="anchor note" data-note="A1"></div></li>
@@ -70,6 +70,5 @@
 
   <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script> <!-- Change this to be // on production -->
   <script src="scripts/band.min.js"></script>
-  <script src="scripts/app.js"></script>
-  <!-- <script src="scripts/app2.js"></script> -->
+  <script src="app.js"></script>
 </body>

@@ -1,3 +1,8 @@
+// angular.module('pianoApp')
+
+//   .controller('PianoController', function($scope) {
+    
+//   });
 (function () {
 
   var music = new BandJS();
@@ -91,7 +96,5 @@
     $('.add').on('click', addNotesToSong);
     $('.play').on('click', toJSON);
   });
-
+  
 })();
-
-
