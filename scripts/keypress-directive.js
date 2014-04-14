@@ -19,7 +19,7 @@ angular.module('pianoApp')
             scope.addNotesToSong();
             break;
           case 37: //'left arrow'
-            //decrement the current note in the song
+            //TODO: decrement the current index of the note in the song to make changes to previous notes
             break;
           case 39: //'right arrow'
             break;
