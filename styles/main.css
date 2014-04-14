@@ -15,9 +15,25 @@ ul.piano {
 }
 
 .p-wrapper-lower {
-  width: 1000px;
+  width: 1040px;
 }
 
 ul.piano.piano-lower {
-  width: 920px;
+  width: 960px;
+}
+
+/*display the current notes*/
+.info-display {
+  position: absolute;
+  bottom: 0; right: 0;
+  width: 200px;
+  height: 200px;
+  background-color: blue;
+}
+
+.rest {
+  display: inline-block;
+  background-image: url(../images/rest.png) !important;
+  width: 40px;
+  height: 40px;
 }
