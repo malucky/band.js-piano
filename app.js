@@ -1,6 +1,9 @@
-angular.module('pianoApp')
+angular.module('pianoApp', [])
+  .controller('PianoController', function ($scope) {
+    $scope.click = function ($event) {
+      console.log($event.target);
+    };
 
-  .controller('PianoController', function($scope) {
     var music = new BandJS();
     var currentNotes = {};
     var currentNotesDuration = "";
@@ -67,9 +70,9 @@ angular.module('pianoApp')
       songNotes.forEach(function (note) {
         result.notes.rightHand.push({
           type: 'note',
-          pitch: note[0], // Set of notes
-          rhythm: note[1] // rhythm
-        });
+            pitch: note[0], // Set of notes
+            rhythm: note[1] // rhythm
+          });
       });
 
       music.load(result);
@@ -78,18 +81,19 @@ angular.module('pianoApp')
     };
 
     $(document).ready(function () {
-      // Add or Remove song when clicked
-      $('.piano').on('click', '.note', function () {
-        if (this.classList.contains('selected')) {
-          removeNote($(this));
-        } else {
-          addNote($(this));
-        }
+        // Add or Remove song when clicked
+        $('.piano').on('click', '.note', function () {
+          if (this.classList.contains('selected')) {
+            removeNote($(this));
+          } else {
+            addNote($(this));
+          }
+        });
+        // keypress handling
+        $(document).keypress(handleKeypress);
+        // Display notes
+        $('.add').on('click', addNotesToSong);
+        $('.play').on('click', toJSON);
       });
-      // keypress handling
-      $(document).keypress(handleKeypress);
-      // Display notes
-      $('.add').on('click', addNotesToSong);
-      $('.play').on('click', toJSON);
-    });
   });
+
